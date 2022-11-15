@@ -1,0 +1,4 @@
+{
+  "extends": "@netly/semantic-release-config",
+  "branches": ["master"]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "@netly/node-fetch",
+  "version": "1.0.0",
+  "description": "Custom node fetch with retry and timeout",
+  "main": "dist/cjs/src/index.js",
+  "module": "dist/esm/src/index.js",
+  "typings": "dist/cjs/src/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "prebuild": "rimraf dist",
+    "build": "npm run build:cjs && npm run build:esm",
+    "lint": "eslint . --format stylish",
+    "pretest": "npm run build",
+    "test": "node --test test",
+    "cz": "cz",
+    "update": "ncu -u",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@netly/eslint-config-base": "1.0.2",
+    "@netly/prettier-config": "1.1.0",
+    "@netly/semantic-release-config": "1.0.2",
+    "@types/node": "^18.11.9",
+    "husky": "^8.0.2",
+    "npm-check-updates": "^16.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint --if-present",
+      "pre-push": "npm run test --if-present"
+    }
+  },
+  "prettier": "@netly/prettier-config",
+  "engines": {
+    "node": ">=18"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DmytroMysak/node-fetch"
+  },
+  "bugs": {
+    "url": "https://github.com/DmytroMysak/node-fetch/issues"
+  },
+  "homepage": "https://github.com/DmytroMysak/node-fetch#readme",
+  "keywords": [
+    "node-fetch",
+    "request",
+    "retry",
+    "timeout"
+  ],
+  "author": "Dmytro Mysak <dmytro.mysak@gmail.com>",
+  "license": "MIT"
+}
