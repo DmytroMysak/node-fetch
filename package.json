@@ -6,6 +6,11 @@
   "module": "dist/esm/src/index.js",
   "typings": "dist/cjs/src/index.d.ts",
   "type": "module",
+  "files": [
+    "package.json",
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
