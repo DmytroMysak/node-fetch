@@ -12,7 +12,7 @@ export class HTTPResponseError extends Error {
 export interface IRequestOptions extends globalThis.RequestInit {
   retry?: number;
   timeout?: number;
-  retryStrategy?: (max: number) => (times: number) => number;
+  retryStrategy?: (numberOfRetry: number) => number;
   retryOnHttpResponse?: false | ((response: globalThis.Response) => boolean);
 }
 
@@ -21,10 +21,7 @@ const DEFAULT_TIMEOUT = 20_000;
 
 const defaultRetryFn = (response: globalThis.Response) => response.status >= 500;
 
-const defaultExponentialBackoff =
-  (max: number) =>
-  (times: number): number =>
-    Math.min((2 ** times - 1) * 1000, max);
+const defaultExponentialBackoff = (times: number): number => Math.min((2 ** times - 1) * 1000, DEFAULT_TIMEOUT);
 
 export default async (url: string, options: IRequestOptions = {}) => {
   const { retry = DEFAULT_RETRY, retryStrategy = defaultExponentialBackoff, timeout = DEFAULT_TIMEOUT } = options;
@@ -60,7 +57,7 @@ export default async (url: string, options: IRequestOptions = {}) => {
         throw error;
       }
 
-      await timers.setTimeout(retryStrategy(DEFAULT_TIMEOUT)(retry));
+      await timers.setTimeout(retryStrategy(retry));
     }
   } while (retriesLeft > 0);
 };

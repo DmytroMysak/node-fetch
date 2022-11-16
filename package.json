@@ -5,7 +5,6 @@
   "main": "dist/cjs/src/index.js",
   "module": "dist/esm/src/index.js",
   "typings": "dist/cjs/src/index.d.ts",
-  "type": "module",
   "files": [
     "package.json",
     "src",
