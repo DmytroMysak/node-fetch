@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.4](https://github.com/DmytroMysak/node-fetch/compare/v1.0.3...v1.0.4) (2022-11-16)
+
+### Bug Fixes
+
+- **module:** fixed import ([b4f6cf0](https://github.com/DmytroMysak/node-fetch/commit/b4f6cf06d5207caba36f446563c095be002ad228))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ### [1.0.3](https://github.com/DmytroMysak/node-fetch/compare/v1.0.2...v1.0.3) (2022-11-16)
 
 ### Bug Fixes
