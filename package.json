@@ -1,6 +1,6 @@
 {
   "name": "@netly/node-fetch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom node fetch with retry and timeout",
   "main": "dist/cjs/src/index.js",
   "module": "dist/esm/src/index.js",
