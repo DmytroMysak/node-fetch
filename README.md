@@ -55,6 +55,8 @@ retryOnHttpResponse: (response: globalThis.Response) => response.status >= 500;
 
 ```js
 const { default: fetch } = require('@netly/node-fetch');
+// or 
+const { fetch } = require('@netly/node-fetch');
 
 const response = await fetch('https://www.google.com');
 ```
@@ -62,13 +64,15 @@ const response = await fetch('https://www.google.com');
 ### For `esm`
 
 ```js
-import fetch from '@netly/node-fetch';
+import { fetch } from '@netly/node-fetch';
 
 const response = await fetch('https://www.google.com');
 ```
 ### For `ts`
 
 ```ts
+import { fetch } from '@netly/node-fetch';
+// or 
 import fetch from '@netly/node-fetch';
 
 const response = await fetch('https://www.google.com');

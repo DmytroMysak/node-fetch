@@ -23,7 +23,7 @@ const defaultRetryFn = (response: globalThis.Response) => response.status >= 500
 
 const defaultExponentialBackoff = (times: number): number => Math.min((2 ** times - 1) * 1000, DEFAULT_TIMEOUT);
 
-export default async (url: string, options: IRequestOptions = {}) => {
+export async function fetch(url: string, options: IRequestOptions = {}): Promise<globalThis.Response> {
   const { retry = DEFAULT_RETRY, retryStrategy = defaultExponentialBackoff, timeout = DEFAULT_TIMEOUT } = options;
   const retryOnHttpResponse =
     options.retryOnHttpResponse === false ? () => false : options.retryOnHttpResponse ?? defaultRetryFn;
@@ -60,4 +60,9 @@ export default async (url: string, options: IRequestOptions = {}) => {
       await timers.setTimeout(retryStrategy(retry));
     }
   } while (retriesLeft > 0);
-};
+
+  // should never reach this point
+  throw new Error('Something wrong happened with logic, no retries left and no error or response');
+}
+
+export default fetch;

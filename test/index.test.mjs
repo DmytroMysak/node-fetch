@@ -5,9 +5,7 @@ import assert from 'node:assert';
 import { URL } from 'node:url';
 import { setTimeout } from 'node:timers/promises';
 import { createServer } from 'http';
-import dist from '../dist/cjs/src/index.js';
-
-const { default: fetch } = dist;
+import { fetch } from '../dist/cjs/src/index.js';
 
 describe('test fetch retry', () => {
   let server;
