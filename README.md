@@ -1,4 +1,4 @@
-# Another node-fetch with native node-fetch + retry + timeout
+# Another node-fetch with native fetch + retry + timeout
 
 Inspired by node-fetch-retry-timeout.
 
@@ -65,6 +65,8 @@ const response = await fetch('https://www.google.com');
 
 ```js
 import { fetch } from '@netly/node-fetch';
+// or
+import fetch from '@netly/node-fetch';
 
 const response = await fetch('https://www.google.com');
 ```

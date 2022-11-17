@@ -5,6 +5,12 @@
   "main": "dist/cjs/src/index.js",
   "module": "dist/esm/src/index.js",
   "typings": "dist/cjs/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/src/index.js",
+      "require": "./dist/cjs/src/index.js"
+    }
+  },
   "files": [
     "package.json",
     "src",
@@ -15,6 +21,7 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "prebuild": "rimraf dist",
+    "postbuild": "./postbuild.sh",
     "build": "npm run build:cjs && npm run build:esm",
     "lint": "eslint . --format stylish",
     "pretest": "npm run build",
