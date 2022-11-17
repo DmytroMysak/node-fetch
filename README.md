@@ -1,8 +1,8 @@
-# Another node-fetch with native fetch + retry + timeout
+# node-fetch with native fetch + retry + timeout
 
 Inspired by node-fetch-retry-timeout.
 
-Minimalistic drop-in replacement for node-fetch.
+Tiny replacement for native **fetch** with additional benefits.
 
 ## Installation
 
@@ -42,8 +42,7 @@ retryStrategy: (times: number): number => Math.min((2 ** times - 1) * 1000, 2000
 
 ### retryOnHttpResponse
 
-Calculates how long to wait before next retry. `times` - the number of retry.
-To disable retry strategy: `() => 0`
+Check if response is desired. If no - throw error and send request one more time.
 
 ```ts
 retryOnHttpResponse: (response: globalThis.Response) => response.status >= 500;
