@@ -31,7 +31,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@netly/eslint-config-base": "1.0.2",
+    "@netly/eslint-config-base": "1.0.3",
     "@netly/prettier-config": "1.1.0",
     "@netly/semantic-release-config": "1.0.2",
     "@types/node": "^18.11.9",
