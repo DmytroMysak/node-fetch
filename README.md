@@ -16,8 +16,8 @@ Same as in native fetch, but with small extension. Everything is **optional**.
 | --------------------------------------------- | ------ | ------------------------------------------ | ------------------------------------------------------ |
 | [`retry`](#retry)                             | number | number of times to retry the request       | 3                                                      |
 | [`timeout`](#timeout)                         | number | number of ms to wait before request cancel | 20_000                                                 |
-| [`retryStrategy`](#retryStrategy)             | number | exponential backoff strategy               | (times) => Math.min((2 \*\* times - 1) \* 1000, 20000) |
-| [`retryOnHttpResponse`](#retryOnHttpResponse) | number | can retry based on http response statuses  | (response) => response.status >= 500;                  |
+| [`retryStrategy`](#retryStrategy)             | Function | exponential backoff strategy               | (times) => Math.min((2 \*\* times - 1) \* 1000, 20000) |
+| [`retryOnHttpResponse`](#retryOnHttpResponse) | Function | can retry based on http response statuses  | (response) => response.status >= 500;                  |
 
 ### retry
 
