@@ -231,7 +231,7 @@ describe('test fetch retry', () => {
         retryStrategy: () => () => 0,
       });
     } catch (e) {
-      assert.strictEqual(e.message, 'The operation was aborted.');
+      assert.ok(e.message.includes('operation was aborted'));
     }
   });
 });
