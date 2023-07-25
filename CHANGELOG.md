@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/DmytroMysak/node-fetch/compare/v1.0.6...v1.1.0) (2023-07-25)
+
+### Features
+
+- **error:** added url to error message ([d94f825](https://github.com/DmytroMysak/node-fetch/commit/d94f8255140393f6d158efca32256a56ae8a836c))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ### [1.0.6](https://github.com/DmytroMysak/node-fetch/compare/v1.0.5...v1.0.6) (2023-02-10)
 
 ### Bug Fixes
