@@ -4,7 +4,7 @@ export class HTTPResponseError extends Error {
   response: globalThis.Response;
 
   constructor(response: globalThis.Response) {
-    super(`HTTP Error Response: ${response.status} ${response.statusText}`);
+    super(`HTTP Error Response: ${response.status} ${response.statusText} for ${response.url}`);
     this.response = response;
   }
 }

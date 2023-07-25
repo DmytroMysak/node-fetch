@@ -5,7 +5,7 @@ import assert from 'node:assert';
 import { URL } from 'node:url';
 import { setTimeout } from 'node:timers/promises';
 import { createServer } from 'http';
-import { fetch } from '../dist/cjs/src/index.js';
+import { fetch } from '../dist/esm/src/index.js';
 
 describe('test fetch retry', () => {
   let server;
@@ -215,7 +215,8 @@ describe('test fetch retry', () => {
         retryStrategy: () => () => 0,
       });
     } catch (e) {
-      assert.strictEqual(e.message, 'HTTP Error Response: 503 Service Unavailable');
+      const msg = `HTTP Error Response: 503 Service Unavailable for ${url}/?${queryParams}`;
+      assert.strictEqual(e.message, msg);
       i = 0;
     }
   });
