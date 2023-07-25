@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.6](https://github.com/DmytroMysak/node-fetch/compare/v1.0.5...v1.0.6) (2023-02-10)
+
+### Bug Fixes
+
+- **docs:** fixed docs typo ([6ad3408](https://github.com/DmytroMysak/node-fetch/commit/6ad3408b8986093689b950cf3f146f3a93e85a43))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ### [1.0.5](https://github.com/DmytroMysak/node-fetch/compare/v1.0.4...v1.0.5) (2022-11-17)
 
 ### Bug Fixes
