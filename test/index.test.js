@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import { describe, it, before, after } from 'node:test';
 import { promisify } from 'node:util';
 import assert from 'node:assert';
@@ -35,7 +34,7 @@ describe('test fetch retry', () => {
             i,
             statusCodeD: query.get('status'),
             delay: statusCode >= 500 && query.has('delay'),
-          })
+          }),
         );
       } catch (e) {
         res.end(JSON.stringify({ header: e.message, body: req.url }));

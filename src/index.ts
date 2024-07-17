@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import timers from 'timers/promises';
 
 export class HTTPResponseError extends Error {
@@ -19,14 +20,14 @@ export interface IRequestOptions extends globalThis.RequestInit {
 const DEFAULT_RETRY = 3;
 const DEFAULT_TIMEOUT = 20_000;
 
-const defaultRetryFn = (response: globalThis.Response) => response.status >= 500;
+const defaultRetryFn = (response: globalThis.Response): boolean => response.status >= 500;
 
 const defaultExponentialBackoff = (times: number): number => Math.min((2 ** times - 1) * 1000, DEFAULT_TIMEOUT);
 
 export async function fetch(url: string, options: IRequestOptions = {}): Promise<globalThis.Response> {
   const { retry = DEFAULT_RETRY, retryStrategy = defaultExponentialBackoff, timeout = DEFAULT_TIMEOUT } = options;
   const retryOnHttpResponse =
-    options.retryOnHttpResponse === false ? () => false : options.retryOnHttpResponse ?? defaultRetryFn;
+    options.retryOnHttpResponse === false ? (): boolean => false : options.retryOnHttpResponse ?? defaultRetryFn;
 
   if (typeof retryOnHttpResponse !== 'function') {
     throw new Error(`'retryOnHttpResponse' must be a function: ${options.retryOnHttpResponse}`);
