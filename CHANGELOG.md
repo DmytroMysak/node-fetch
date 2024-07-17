@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/DmytroMysak/node-fetch/compare/v1.1.0...v1.1.1) (2024-07-17)
+
+### Bug Fixes
+
+- **eslint:** fixed build, bump eslint and added stricker type definitions ([9a54def](https://github.com/DmytroMysak/node-fetch/commit/9a54defeadd40d439343544f31b38078bac8dfcc))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [1.1.0](https://github.com/DmytroMysak/node-fetch/compare/v1.0.6...v1.1.0) (2023-07-25)
 
 ### Features
